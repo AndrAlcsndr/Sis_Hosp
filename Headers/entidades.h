@@ -1,4 +1,4 @@
-//Trabalho de TP 1 - André Fioravante Nicolodi Durante Junior 16/0112010 & André Alecsander Araújo Lopes 18/0116142 
+//Trabalho de TP 1 - André Fioravante Nicolodi Durante Junior 16/0112010 & André Alecsander Araújo Lopes 18/0116142 - Entidades.h
 
 #ifndef ENTIDADES_H_INCLUDED
 #define ENTIDADES_H_INCLUDED
@@ -94,8 +94,64 @@ return descricao;
 class Hospedagem{
 private:
 
-public:
+Codigo codigo;
+Cidade cidade;
+Pais pais;
+Nota nota;
+Descricao descricao;
 
+public:
+void SetCodigo (const Codigo&); 
+void SetCidade (const Cidade&);
+void SetPais (const Pais&);
+void SetNota (const Nota&);
+void SetDescricao(const Descricao&);
+
+Codigo getCodigo() const;
+Nota getCidade() const;
+Pais getPais() const;
+Nota getNota() const;
+Descricao getDescricao() const;
+};
+
+// -----------------------------------------------------
+// Implementacao Metodos inline set da entidade Usuario.
+// -----------------------------------------------------
+
+inline void Hospedagem::setCodigo(const Codigo& codigo){
+this->codigo = codigo;
+}
+inline void Hospedagem::setCidade(const Cidade& cidade){
+this->nota = nota;
+}
+inline void Hospedagem::SetPais(const pais& pais) {
+this->pais = pais;
+}
+inline void Hospedagem::SetNota(const nota& nota) {
+this->nota = nota; 
+}
+inline void Hospedagem::SetDescricao(const descricao& descricao) {
+this->descricao = descricao;
+}
+
+// -----------------------------------------------------
+// Implementacao Metodos inline get da entidade Usuario.
+// -----------------------------------------------------
+
+inline void Hospedagem::getCodigo() const{
+return codigo;
+}
+inline void Hospedagem::getCidade() const{
+return cidade;
+}
+inline void Hospedagem::getPais() const{
+return pais;
+}
+inline void Hospedagem::getNota() const{
+return nota;
+}
+inline void Hospedagem::GetDescricao() const{
+return descricao;
 }
 
 
@@ -114,6 +170,10 @@ Codigo getCodigo() const;
 Nota getNota() const;
 Descricao getDescricao() const;
 };
+
+// -----------------------------------------------------
+// Implementacao Metodos inline set da entidade Usuario.
+// -----------------------------------------------------
 
 inline void Avaliacao::setCodigo(const Codigo& codigo){
 this->codigo = codigo;
