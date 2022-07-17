@@ -1,6 +1,6 @@
-// Exemplos de classes domínio, classe entidade e testes de unidade.
+// Exemplos de classes domï¿½nio, classe entidade e testes de unidade.
 
-// Incluir cabeçalhos.
+// Incluir cabeï¿½alhos.
 
 #include <iostream>
 
@@ -14,7 +14,7 @@ int main()
 {
 
 //---------------------------------------------------------------------------
-// Estrutura de código para instanciar e executar teste de unidade.
+// Estrutura de cï¿½digo para instanciar e executar teste de unidade.
 
 /* --------------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ int main()
 
     TUnidade teste;
 
-    // Invocar método e apresentar mensagem acerca do resultado.
+    // Invocar mï¿½todo e apresentar mensagem acerca do resultado.
 
     switch(teste.run()){
         case TUnidade::SUCESSO: cout << "SUCESSO" << endl;
@@ -34,13 +34,13 @@ int main()
 -------------------------------------------------------------------------- */
 
     //-----------------------------------------------------------------------
-    // Exemplo d eteste de classe domínio.
+    // Exemplo d eteste de classe domï¿½nio.
 
-    // Instanciar classe de teste de domínio.
+    // Instanciar classe de teste de domï¿½nio.
 
     TUCodigo testeA;
 
-    // Invocar método e apresentar mensagem acerca do resultado do teste.
+    // Invocar mï¿½todo e apresentar mensagem acerca do resultado do teste.
 
     switch(testeA.run()){
         case TUCodigo::SUCESSO: cout << "SUCESSO - CODIGO" << endl;
@@ -56,7 +56,7 @@ int main()
 
     TUProjeto testeB;
 
-    // Invocar método e apresentar mensagem acerca do resultado do teste.
+    // Invocar mï¿½todo e apresentar mensagem acerca do resultado do teste.
 
     switch(testeB.run()){
         case TUProjeto::SUCESSO: cout << "SUCESSO - PROJETO" << endl;

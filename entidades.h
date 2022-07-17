@@ -1,63 +1,226 @@
+// Trabalho de TP 1 - Andr√© Fioravante Nicolodi Durante Junior 16/0112010 & Andr√© Alecsander Ara√∫jo Lopes 18/0116142 - Entidades.h
+
 #ifndef ENTIDADES_H_INCLUDED
 #define ENTIDADES_H_INCLUDED
 
-#include "dominios.h"
+#include <iostream>
+#include <iomanip>
+#include <math.h>
 #include <string>
+#include <bits/stdc++.h>
+#include "dominios.h"
 
 using namespace std;
 
-/* -----------------------------------------------------------------------
-// Estrutura de cÛdigo sugerida para declaraÁ„o de classe entidade.
-// Substituir Entidade por nome da classe.
-// Substituir Dominio.
-// Substituir nomeAtributo.
-
-class Entidade {
-    private:
-            Dominio nomeAtributo;                   // Declarar cada atributo da classe.
-    public:
-            void setnomeAtributo(const Dominio&);   // Declarar mÈtodo set para cada atributo.
-            Dominio getnomeAtributo() const;        // Declarar mÈtodo get para cada atributo.
-};
-
-inline void Entidade::setnomeAtributo(const Dominio &nomeAtributo){
-    this->nomeAtributo = nomeAtributo;
-}
-
-inline Dominio Entidade::getnomeAtributo() const{
-    return nomeAtributo;
-}
-
------------------------------------------------------------------------ */
-
-// -----------------------------------------------------------------------
-// Exemplo de declaraÁ„o de classe entidade e implementaÁıes de mÈtodos.
-
-class Projeto {
+class Usuario
+{
 private:
-    Codigo      codigo;
-    Prioridade  prioridade;
+    Nome nome;
+    Email email;
+    Senha senha;
+    Idioma idioma;
+    Data data;
+    Descricao descricao;
+
 public:
-    void setCodigo(const Codigo&);
-    Codigo getCodigo() const;
-    void setPrioridade(const Prioridade&);
-    Prioridade getPrioridade() const;
+    void setNome(const Nome &);
+    void setEmail(const Email &);
+    void setSenha(const Senha &);
+    void setIdioma(const Idioma &);
+    void setData(const Data &);
+    void setDescricao(const Descricao &);
+
+    Nome getNome() const;
+    Email getEmail() const;
+    Senha getSenha() const;
+    Idioma getIdioma() const;
+    Data getData() const;
+    Descricao getDescricao() const;
 };
 
-inline void Projeto::setCodigo(const Codigo& codigo){
+// -----------------------------------------------------
+// Implementacao Metodos inline set da entidade Usuario.
+// -----------------------------------------------------
+
+inline void Usuario::setNome(const Nome &nome)
+{
+    this->nome = nome;
+}
+inline void Usuario::setEmail(const Email &email)
+{
+    this->email = email;
+}
+inline void Usuario::setSenha(const Senha &senha)
+{
+    this->senha = senha;
+}
+inline void Usuario::setIdioma(const Idioma &idioma)
+{
+    this->idioma = idioma;
+}
+inline void Usuario::setData(const Data &data)
+{
+    this->data = data;
+}
+inline void Usuario::setDescricao(const Descricao &descricao)
+{
+    this->descricao = descricao;
+}
+// -----------------------------------------------------
+// Implementacao Metodos inline get da entidade Usuario.
+// -----------------------------------------------------
+
+inline Nome Usuario::getNome() const
+{
+    return nome;
+}
+
+inline Email Usuario::getEmail() const
+{
+    return email;
+}
+
+inline Senha Usuario::getSenha() const
+{
+    return senha;
+}
+
+inline Idioma Usuario::getIdioma() const
+{
+    return idioma;
+}
+
+inline Data Usuario::getData() const
+{
+    return data;
+}
+
+inline Descricao Usuario::getDescricao() const
+{
+    return descricao;
+}
+
+class Hospedagem
+{
+private:
+    Codigo codigo;
+    Cidade cidade;
+    Pais pais;
+    Nota nota;
+    Descricao descricao;
+
+public:
+    void setCodigo(const Codigo &);
+    void setCidade(const Cidade &);
+    void setPais(const Pais &);
+    void setNota(const Nota &);
+    void setDescricao(const Descricao &);
+
+    Codigo getCodigo();
+    Cidade getCidade() const;
+    Pais getPais() const;
+    Nota getNota() const;
+    Descricao getDescricao() const;
+};
+
+// -----------------------------------------------------
+// Implementacao Metodos inline set da entidade Usuario.
+// -----------------------------------------------------
+
+inline void Hospedagem::setCodigo(const Codigo &codigo)
+{
     this->codigo = codigo;
 }
+inline void Hospedagem::setCidade(const Cidade &cidade)
+{
+    this->cidade = cidade;
+}
+inline void Hospedagem::setPais(const Pais &pais)
+{
+    this->pais = pais;
+}
+inline void Hospedagem::setNota(const Nota &nota)
+{
+    this->nota = nota;
+}
+inline void Hospedagem::setDescricao(const Descricao &descricao)
+{
+    this->descricao = descricao;
+}
 
-inline Codigo Projeto::getCodigo() const {
+// -----------------------------------------------------
+// Implementacao Metodos inline get da entidade Usuario.
+// -----------------------------------------------------
+
+inline Codigo Hospedagem::getCodigo()
+{
     return codigo;
 }
-
-inline void Projeto::setPrioridade(const Prioridade& prioridade){
-    this->prioridade = prioridade;
+inline Cidade Hospedagem::getCidade() const
+{
+    return cidade;
+}
+inline Pais Hospedagem::getPais() const
+{
+    return pais;
+}
+inline Nota Hospedagem::getNota() const
+{
+    return nota;
+}
+inline Descricao Hospedagem::getDescricao() const
+{
+    return descricao;
 }
 
-inline Prioridade Projeto::getPrioridade() const {
-    return prioridade;
+class Avaliacao
+{
+private:
+    Codigo codigo;
+    Nota nota;
+    Descricao descricao;
+
+public:
+    void setCodigo(const Codigo &);
+    void setNota(const Nota &);
+    void setDescricao(const Descricao &);
+
+    Codigo getCodigo() const;
+    Nota getNota() const;
+    Descricao getDescricao() const;
+};
+
+// -----------------------------------------------------
+// Implementacao Metodos inline set da entidade Usuario.
+// -----------------------------------------------------
+
+inline void Avaliacao::setCodigo(const Codigo &codigo)
+{
+    this->codigo = codigo;
+}
+inline void Avaliacao::setDescricao(const Descricao &descricao)
+{
+    this->descricao = descricao;
+}
+inline void Avaliacao::setNota(const Nota &nota)
+{
+    this->nota = nota;
+}
+// -------------------------------------------------------
+// Implementacao Metodos inline get da entidade Avaliacao.
+// -------------------------------------------------------
+
+inline Codigo Avaliacao::getCodigo() const
+{
+    return codigo;
+}
+inline Nota Avaliacao::getNota() const
+{
+    return nota;
+}
+inline Descricao Avaliacao::getDescricao() const
+{
+    return descricao;
 }
 
-#endif // ENTIDADES_H_INCLUDED
+#endif
