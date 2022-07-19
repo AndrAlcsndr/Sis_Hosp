@@ -4,38 +4,42 @@
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de Nome de teste de unidade.
 
-void TUNome::setUp(){
-    nome = new Nome ();
+void TUNome::setUp() {
+    nome = new Nome();
     estado = SUCESSO;
 }
 
-void TUNome::tearDown(){
+void TUNome::tearDown() {
     delete nome;
 }
 
-void TUNome::testarCenarioSucesso(){
-    try{
+void TUNome::testarCenarioSucesso() {
+    try {
         nome->setNome("Andre");
-        if (nome->getNome() != VALOR_VALIDO)
-            estado = FALHA;
+        if (nome->getNome() == VALOR_VALIDO) {
+            estado = SUCESSO;
+        }
+
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-void TUNome::testarCenarioFalha(){
-    try{
+void TUNome::testarCenarioFalha() {
+    try {
         nome->setNome("4ndr3");
-        estado = FALHA;
+        if (nome->getNome() == VALOR_INVALIDO) {
+            estado = SUCESSO;
+        }
+
     }
-    catch(invalid_argument &excecao){
-        if (nome->getNome() == VALOR_INVALIDO)
-            estado = FALHA;
+    catch (invalid_argument& excecao) {
+        estado = FALHA;
     }
 }
 
-int TUNome::run(){
+int TUNome::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -46,38 +50,40 @@ int TUNome::run(){
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de Cidade de teste de unidade.
 
-void TUCidade::setUp(){
+void TUCidade::setUp() {
     cidade = new Cidade();
     estado = SUCESSO;
 }
 
-void TUCidade::tearDown(){
+void TUCidade::tearDown() {
     delete cidade;
 }
 
-void TUCidade::testarCenarioSucesso(){
-    try{
+void TUCidade::testarCenarioSucesso() {
+    try {
         cidade->setCidade("Bangkok");
-        if (cidade->getCidade() != VALOR_VALIDO)
-            estado = FALHA;
+        if (cidade->getCidade() == VALOR_VALIDO)
+            estado = SUCESSO;
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-void TUCidade::testarCenarioFalha(){
-    try{
+void TUCidade::testarCenarioFalha() {
+    try {
         cidade->setCidade(VALOR_INVALIDO);
-        estado = FALHA;
+        if (cidade->getCidade() == VALOR_INVALIDO) {
+            estado = SUCESSO;
+        }
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         if (cidade->getCidade() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
 
-int TUCidade::run(){
+int TUCidade::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -88,38 +94,40 @@ int TUCidade::run(){
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de Codigo de teste de unidade.
 
-void TUCodigo::setUp(){
+void TUCodigo::setUp() {
     codigo = new Codigo();
     estado = SUCESSO;
 }
 
-void TUCodigo::tearDown(){
+void TUCodigo::tearDown() {
     delete codigo;
 }
 
-void TUCodigo::testarCenarioSucesso(){
-    try{
+void TUCodigo::testarCenarioSucesso() {
+    try {
         codigo->setCodigo(VALOR_VALIDO);
-        if (codigo->getCodigo() != VALOR_VALIDO)
-            estado = FALHA;
+        if (codigo->getCodigo() == VALOR_VALIDO)
+            estado = SUCESSO;
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-void TUCodigo::testarCenarioFalha(){
-    try{
+void TUCodigo::testarCenarioFalha() {
+    try {
         codigo->setCodigo(VALOR_INVALIDO);
-        estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
         if (codigo->getCodigo() == VALOR_INVALIDO)
-            estado = FALHA;
+        {
+            estado = SUCESSO;
+        }
+    }
+    catch (invalid_argument& excecao) {
+        estado = FALHA;
     }
 }
 
-int TUCodigo::run(){
+int TUCodigo::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -131,38 +139,39 @@ int TUCodigo::run(){
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de Data de teste de unidade.
 
-void TUData::setUp(){
+void TUData::setUp() {
     data = new Data();
     estado = SUCESSO;
 }
 
-void TUData::tearDown(){
+void TUData::tearDown() {
     delete data;
 }
 
-void TUData::testarCenarioSucesso(){
-    try{
+void TUData::testarCenarioSucesso() {
+    try {
         data->setData(VALOR_VALIDO);
-        if (data->getData() != VALOR_VALIDO)
-            estado = FALHA;
+        if (data->getData() == VALOR_VALIDO)
+            estado = SUCESSO;
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-void TUData::testarCenarioFalha(){
-    try{
+void TUData::testarCenarioFalha() {
+    try {
         data->setData(VALOR_INVALIDO);
-        estado = FALHA;
+        if (data->getData() == VALOR_INVALIDO) {
+            estado = SUCESSO;
+        }
     }
-    catch(invalid_argument &excecao){
-        if (data->getData() == VALOR_INVALIDO)
-            estado = FALHA;
+    catch (invalid_argument& excecao) {
+        estado = FALHA;
     }
 }
 
-int TUData::run(){
+int TUData::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -174,38 +183,38 @@ int TUData::run(){
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de Descricao de teste de unidade.
 
-void TUDescricao::setUp(){
+void TUDescricao::setUp() {
     descricao = new Descricao();
     estado = SUCESSO;
 }
 
-void TUDescricao::tearDown(){
+void TUDescricao::tearDown() {
     delete descricao;
 }
 
-void TUDescricao::testarCenarioSucesso(){
-    try{
+void TUDescricao::testarCenarioSucesso() {
+    try {
         descricao->setDescricao(VALOR_VALIDO);
-        if (descricao->getDescricao() != VALOR_VALIDO)
-            estado = FALHA;
+        if (descricao->getDescricao() == VALOR_VALIDO)
+            estado = SUCESSO;
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-void TUDescricao::testarCenarioFalha(){
-    try{
+void TUDescricao::testarCenarioFalha() {
+    try {
         descricao->setDescricao(VALOR_INVALIDO);
-        estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
         if (descricao->getDescricao() == VALOR_INVALIDO)
             estado = FALHA;
     }
+    catch (invalid_argument& excecao) {
+        estado = FALHA;
+    }
 }
 
-int TUDescricao::run(){
+int TUDescricao::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -217,38 +226,39 @@ int TUDescricao::run(){
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de Email de teste de unidade.
 
-void TUEmail::setUp(){
+void TUEmail::setUp() {
     email = new Email();
     estado = SUCESSO;
 }
 
-void TUEmail::tearDown(){
+void TUEmail::tearDown() {
     delete email;
 }
 
-void TUEmail::testarCenarioSucesso(){
-    try{
+void TUEmail::testarCenarioSucesso() {
+    try {
         email->setEmail(VALOR_VALIDO);
-        if (email->getEmail() != VALOR_VALIDO)
-            estado = FALHA;
+        if (email->getEmail() == VALOR_VALIDO)
+            estado = SUCESSO;
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-void TUEmail::testarCenarioFalha(){
-    try{
+void TUEmail::testarCenarioFalha() {
+    try {
         email->setEmail(VALOR_INVALIDO);
-        estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
         if (email->getEmail() == VALOR_INVALIDO)
-            estado = FALHA;
+            estado = SUCESSO;
+
+    }
+    catch (invalid_argument& excecao) {
+        estado = FALHA;
     }
 }
 
-int TUEmail::run(){
+int TUEmail::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -260,38 +270,39 @@ int TUEmail::run(){
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de Email de teste de unidade.
 
-void TUIdioma::setUp(){
+void TUIdioma::setUp() {
     idioma = new Idioma();
     estado = SUCESSO;
 }
 
-void TUIdioma::tearDown(){
+void TUIdioma::tearDown() {
     delete idioma;
 }
 
-void TUIdioma::testarCenarioSucesso(){
-    try{
+void TUIdioma::testarCenarioSucesso() {
+    try {
         idioma->setIdioma(VALOR_VALIDO);
-        if (idioma->getIdioma() != VALOR_VALIDO)
-            estado = FALHA;
+        if (idioma->getIdioma() == VALOR_VALIDO)
+            estado = SUCESSO;
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-void TUIdioma::testarCenarioFalha(){
-    try{
+void TUIdioma::testarCenarioFalha() {
+    try {
         idioma->setIdioma(VALOR_INVALIDO);
-        estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
         if (idioma->getIdioma() == VALOR_INVALIDO)
             estado = FALHA;
+
+    }
+    catch (invalid_argument& excecao) {
+        estado = FALHA;
     }
 }
 
-int TUIdioma::run(){
+int TUIdioma::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -302,38 +313,39 @@ int TUIdioma::run(){
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de Email de teste de unidade.
 
-void TUNota::setUp(){
+void TUNota::setUp() {
     nota = new Nota();
     estado = SUCESSO;
 }
 
-void TUNota::tearDown(){
+void TUNota::tearDown() {
     delete nota;
 }
 
-void TUNota::testarCenarioSucesso(){
-    try{
+void TUNota::testarCenarioSucesso() {
+    try {
         nota->setNota(VALOR_VALIDO);
-        if (nota->getNota() != VALOR_VALIDO)
-            estado = FALHA;
+        if (nota->getNota() == VALOR_VALIDO)
+            estado = SUCESSO;
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-void TUNota::testarCenarioFalha(){
-    try{
+void TUNota::testarCenarioFalha() {
+    try {
         nota->setNota(VALOR_INVALIDO);
-        estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
         if (nota->getNota() == VALOR_INVALIDO)
-            estado = FALHA;
+            estado = SUCESSO;
+
+    }
+    catch (invalid_argument& excecao) {
+        estado = FALHA;
     }
 }
 
-int TUNota::run(){
+int TUNota::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -345,38 +357,39 @@ int TUNota::run(){
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de Email de teste de unidade.
 
-void TUPais::setUp(){
+void TUPais::setUp() {
     pais = new Pais();
     estado = SUCESSO;
 }
 
-void TUPais::tearDown(){
+void TUPais::tearDown() {
     delete pais;
 }
 
-void TUPais::testarCenarioSucesso(){
-    try{
+void TUPais::testarCenarioSucesso() {
+    try {
         pais->setPais(VALOR_VALIDO);
-        if (pais->getPais() != VALOR_VALIDO)
-            estado = FALHA;
+        if (pais->getPais() == VALOR_VALIDO)
+            estado = SUCESSO;
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-void TUPais::testarCenarioFalha(){
-    try{
+void TUPais::testarCenarioFalha() {
+    try {
         pais->setPais(VALOR_INVALIDO);
-        estado = FALHA;
-    }
-    catch(invalid_argument &excecao){
         if (pais->getPais() == VALOR_INVALIDO)
-            estado = FALHA;
+            estado = SUCESSO;
+
+    }
+    catch (invalid_argument& excecao) {
+        estado = FALHA;
     }
 }
 
-int TUPais::run(){
+int TUPais::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -388,38 +401,38 @@ int TUPais::run(){
 // --------------------------------------------------------------------------
 // Implementa��es de m�todos de Email de teste de unidade.
 
-void TUSenha::setUp(){
+void TUSenha::setUp() {
     senha = new Senha();
     estado = SUCESSO;
 }
 
-void TUSenha::tearDown(){
+void TUSenha::tearDown() {
     delete senha;
 }
 
-void TUSenha::testarCenarioSucesso(){
-    try{
+void TUSenha::testarCenarioSucesso() {
+    try {
         senha->setSenha(VALOR_VALIDO);
-        if (senha->getSenha() != VALOR_VALIDO)
-            estado = FALHA;
+        if (senha->getSenha() == VALOR_VALIDO)
+            estado = SUCESSO;
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-void TUSenha::testarCenarioFalha(){
-    try{
+void TUSenha::testarCenarioFalha() {
+    try {
         senha->setSenha(VALOR_INVALIDO);
         if (senha->getSenha() == VALOR_INVALIDO)
-            estado = FALHA;
+            estado = SUCESSO;
     }
-    catch(invalid_argument &excecao){
+    catch (invalid_argument& excecao) {
         estado = FALHA;
     }
 }
 
-int TUSenha::run(){
+int TUSenha::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();

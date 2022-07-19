@@ -7,8 +7,7 @@
 #include <iomanip>
 #include <math.h>
 #include <string>
-#include <bits/stdc++.h>
-#include "dominios.h"
+#include "Dominios.h"
 
 using namespace std;
 
@@ -23,12 +22,12 @@ private:
     Descricao descricao;
 
 public:
-    void setNome(const Nome &);
-    void setEmail(const Email &);
-    void setSenha(const Senha &);
-    void setIdioma(const Idioma &);
-    void setData(const Data &);
-    void setDescricao(const Descricao &);
+    void setNome(const Nome&);
+    void setEmail(const Email&);
+    void setSenha(const Senha&);
+    void setIdioma(const Idioma&);
+    void setData(const Data&);
+    void setDescricao(const Descricao&);
 
     Nome getNome() const;
     Email getEmail() const;
@@ -42,27 +41,27 @@ public:
 // Implementacao Metodos inline set da entidade Usuario.
 // -----------------------------------------------------
 
-inline void Usuario::setNome(const Nome &nome)
+inline void Usuario::setNome(const Nome& nome)
 {
     this->nome = nome;
 }
-inline void Usuario::setEmail(const Email &email)
+inline void Usuario::setEmail(const Email& email)
 {
     this->email = email;
 }
-inline void Usuario::setSenha(const Senha &senha)
+inline void Usuario::setSenha(const Senha& senha)
 {
     this->senha = senha;
 }
-inline void Usuario::setIdioma(const Idioma &idioma)
+inline void Usuario::setIdioma(const Idioma& idioma)
 {
     this->idioma = idioma;
 }
-inline void Usuario::setData(const Data &data)
+inline void Usuario::setData(const Data& data)
 {
     this->data = data;
 }
-inline void Usuario::setDescricao(const Descricao &descricao)
+inline void Usuario::setDescricao(const Descricao& descricao)
 {
     this->descricao = descricao;
 }
@@ -110,11 +109,11 @@ private:
     Descricao descricao;
 
 public:
-    void SetCodigo(const Codigo &);
-    void SetCidade(const Cidade &);
-    void SetPais(const Pais &);
-    void SetNota(const Nota &);
-    void SetDescricao(const Descricao &);
+    void SetCodigo(const Codigo&);
+    void SetCidade(const Cidade&);
+    void SetPais(const Pais&);
+    void SetNota(const Nota&);
+    void SetDescricao(const Descricao&);
 
     Codigo getCodigo();
     Cidade getCidade() const;
@@ -127,23 +126,23 @@ public:
 // Implementacao Metodos inline set da entidade Usuario.
 // -----------------------------------------------------
 
-inline void Hospedagem::SetCodigo(const Codigo &codigo)
+inline void Hospedagem::SetCodigo(const Codigo& codigo)
 {
     this->codigo = codigo;
 }
-inline void Hospedagem::SetCidade(const Cidade &cidade)
+inline void Hospedagem::SetCidade(const Cidade& cidade)
 {
     this->cidade = cidade;
 }
-inline void Hospedagem::SetPais(const Pais &pais)
+inline void Hospedagem::SetPais(const Pais& pais)
 {
     this->pais = pais;
 }
-inline void Hospedagem::SetNota(const Nota &nota)
+inline void Hospedagem::SetNota(const Nota& nota)
 {
     this->nota = nota;
 }
-inline void Hospedagem::SetDescricao(const Descricao &descricao)
+inline void Hospedagem::SetDescricao(const Descricao& descricao)
 {
     this->descricao = descricao;
 }
@@ -181,9 +180,9 @@ private:
     Descricao descricao;
 
 public:
-    void setCodigo(const Codigo &);
-    void setNota(const Nota &);
-    void setDescricao(const Descricao &);
+    void setCodigo(const Codigo&);
+    void setNota(const Nota&);
+    void setDescricao(const Descricao&);
 
     Codigo getCodigo() const;
     Nota getNota() const;
@@ -194,15 +193,15 @@ public:
 // Implementacao Metodos inline set da entidade Usuario.
 // -----------------------------------------------------
 
-inline void Avaliacao::setCodigo(const Codigo &codigo)
+inline void Avaliacao::setCodigo(const Codigo& codigo)
 {
     this->codigo = codigo;
 }
-inline void Avaliacao::setDescricao(const Descricao &descricao)
+inline void Avaliacao::setDescricao(const Descricao& descricao)
 {
     this->descricao = descricao;
 }
-inline void Avaliacao::setNota(const Nota &nota)
+inline void Avaliacao::setNota(const Nota& nota)
 {
     this->nota = nota;
 }
@@ -224,3 +223,4 @@ inline Descricao Avaliacao::getDescricao() const
 }
 
 #endif
+#pragma once

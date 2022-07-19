@@ -1,5 +1,7 @@
-#include "dominios.h"
+#include "Dominios.h"
 #include <vector>
+#include <iostream>
+#include <cctype>
 #include <regex>
 #include <algorithm>
 
@@ -12,9 +14,9 @@ using namespace std;
 string removeCaracteresRepetidos(string strings, string carac)
 {
     // Processo de remoção de caracteres repetidos em sequência
-    for (char c: carac) {
-		strings.erase(std::remove(strings.begin(), strings.end(), c), strings.end());
-	}
+    for (char c : carac) {
+        strings.erase(std::remove(strings.begin(), strings.end(), c), strings.end());
+    }
 
     return strings;
 }
@@ -36,12 +38,13 @@ void Nome::setNome(string nome)
     if (validar(nome))
     {
         this->nome = nome;
+        return;
 
     }
     else
     {
-        string msg = "Invalid_Nome";
-        throw msg;
+        string msg = "Invalid_Name";
+        throw(invalid_argument (msg));
     }
 }
 
@@ -55,17 +58,17 @@ void Cidade::setCidade(string cidade)
     }
     else
     {
-       string msg = "Invalid_Cidade";
-       throw msg;
+        string msg = "Invalid_Cidade";
+        throw (invalid_argument (msg));
     }
 }
 
 bool Cidade::validar(string cidade)
 {
-    vector<string> cidades_validas = {"Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau", "Mumbai", "Paris",
-                               "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", "Kuala Lumpur", "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio"};
+    vector<string> cidades_validas = { "Antalya", "Bangkok", "Delhi", "Dubai", "Hong Kong", "Londres", "Macau", "Mumbai", "Paris",
+                               "Rio de Janeiro", "Sao Paulo", "Seul", "Istambul", "Kuala Lumpur", "Nova Iorque", "Osaka", "Phuket", "Shenzhen", "Toquio" };
 
-    if(!(find(cidades_validas.begin(), cidades_validas.end(), cidade)==cidades_validas.end()))
+    if (!(find(cidades_validas.begin(), cidades_validas.end(), cidade) == cidades_validas.end()))
     {
         return true;
     }
@@ -76,7 +79,7 @@ bool Cidade::validar(string cidade)
 
 }
 
-bool checkLuhn(const string &cardNo)
+bool checkLuhn(const string& cardNo)
 {
     int nDigits = cardNo.length();
 
@@ -110,8 +113,6 @@ bool Codigo::validar(string codigo)
             return false;
     }
 
-    if (isdigit(codigo[codigo.length()]) == false)
-        return false;
     if (checkLuhn(codigo) == false)
     {
         return false;
@@ -129,7 +130,7 @@ void Codigo::setCodigo(string codigo)
     else
     {
         string msg = "Invalid_Codigo";
-        throw msg;
+        throw(invalid_argument(msg));
     }
 }
 
@@ -137,8 +138,8 @@ bool Data::validar(string data)
 {
     string carac_delim = "/";
     vector<string> words{};
-    const char *meses[] = {"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul",
-                           "Ago", "Set", "Out", "Nov", "Dez"};
+    const char* meses[] = { "JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL",
+                           "AGO", "SET", "OUT", "NOV", "DEZ" };
 
     size_t pos = 0;
     while ((pos = data.find(carac_delim)) != string::npos)
@@ -149,15 +150,16 @@ bool Data::validar(string data)
     /* for (const auto &str : words) {
         cout << str << endl;
     } */
-    int tam = sizeof(words) / sizeof(words[0]);
+    int tam = size(meses);
     for (int i = 0; i < tam; i++)
     {
-        if (!(find(words.begin(), words.end(), meses[i]) == words.end()))
+        if (data == meses[i])
         {
 
             return true;
         }
     }
+
     return false;
 }
 
@@ -170,7 +172,7 @@ void Data::setData(string data)
     else
     {
         string msg = "Invalid_Data";
-        throw msg;
+        throw(invalid_argument(msg));
     }
 }
 
@@ -178,6 +180,7 @@ void Descricao::setDescricao(string descricao)
 {
     if (validar(descricao))
     {
+        descricao = removeCaracteresRepetidos(descricao, ".,:;?!");
         this->descricao = descricao;
     }
     else
@@ -187,7 +190,7 @@ void Descricao::setDescricao(string descricao)
     }
 }
 
-bool Email::validar (string email) {
+bool Email::validar(string email) {
     // Regular expression definition
     const regex pattern(
         "(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
@@ -197,14 +200,14 @@ bool Email::validar (string email) {
     return regex_match(email, pattern);
 }
 
-void Email::setEmail (string email) {
+void Email::setEmail(string email) {
     if (validar(email)) {
         this->email = email;
     }
     else
     {
         string msg = "Invalid_Email";
-        throw msg;
+        throw(invalid_argument(msg));
     }
 }
 
@@ -212,7 +215,7 @@ bool Descricao::validar(string descricao)
 {
     if (descricao.length() <= 40)
     {
-        removeCaracteresRepetidos(descricao, ".,:;?!");
+        descricao = removeCaracteresRepetidos(descricao, ".,:;?!");
         //removeCaracteresRepetidos(descricao, ",");
         //removeCaracteresRepetidos(descricao, ":");
         //removeCaracteresRepetidos(descricao, ";");
@@ -229,7 +232,7 @@ bool Descricao::validar(string descricao)
 
 bool Idioma::validar(string idioma)
 {
-    vector<string> idiomas = {"Ingles", "Chines Mandarim", "Hindi", "Espanhol", "Frances", "Arabe", "Bengali", "Russo", "Portugues", "Indonesio"};
+    vector<string> idiomas = { "Ingles", "Chines Mandarim", "Hindi", "Espanhol", "Frances", "Arabe", "Bengali", "Russo", "Portugues", "Indonesio" };
     if (!(find(idiomas.begin(), idiomas.end(), idioma) == idiomas.begin()))
     {
         return false;
@@ -249,13 +252,13 @@ void Idioma::setIdioma(string idioma)
     else
     {
         string msg = "Invalid_idioma";
-        throw msg;
+        throw(invalid_argument(msg));
     }
 }
 
 bool Nota::validar(float nota)
 {
-    if (nota >= 0 && nota <= 10)
+    if (nota >= 0 && nota <= 5)
     {
         return true;
     }
@@ -274,13 +277,13 @@ void Nota::setNota(float nota)
     else
     {
         string msg = "Invalid_Nota";
-        throw msg;
+        throw(invalid_argument(msg));
     }
 }
 
 bool Pais::validar(string pais)
 {
-    vector<string> paises = {"Estados Unidos", "Brasil", "China", "Coreia do Sul", "Emirados", "India", "França", "India", "Japao", "Malasia", "Reino Unido", "Tailancia", "Turquia"};
+    vector<string> paises = { "Estados Unidos", "Brasil", "China", "Coreia do Sul", "Emirados", "India", "França", "India", "Japao", "Malasia", "Reino Unido", "Tailancia", "Turquia" };
     if (!(find(paises.begin(), paises.end(), pais) == paises.end()))
     {
         return true;
@@ -300,7 +303,7 @@ void Pais::setPais(string pais)
     else
     {
         string msg = "Invalid_pais";
-        throw msg;
+        throw(invalid_argument(msg));
     }
 }
 
@@ -312,12 +315,19 @@ bool Senha::validar(string senha)
     int k = 0;
     if (senha.length() == 5)
     {
-        while (isalpha(senha[i]))
-            i++;
-        while (isalnum(senha[i]))
-            j++;
-        while (isdigit(senha[i]))
-            k++;
+        int tam = senha.length();
+
+        for (int a = 0; a < tam; a++) {
+            if (isalpha(senha[a]))
+                i++;
+
+            if (isalnum(senha[a]))
+                j++;
+
+            if (isdigit(senha[a]))
+                k++;
+        }
+
         if (!(i == 0 && j == 0 && k == 0))
         {
             return false;
@@ -326,7 +336,8 @@ bool Senha::validar(string senha)
         {
             return true;
         }
-    } else {
+    }
+    else {
         return false;
     }
 }
@@ -340,7 +351,7 @@ void Senha::setSenha(string senha)
     else
     {
         string msg = "Invalid_Senha";
-        throw msg;
+        throw(invalid_argument(msg));
     }
 
 

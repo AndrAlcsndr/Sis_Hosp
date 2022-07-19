@@ -24,11 +24,11 @@ private:
 	bool validar(string); //throw(invalid_argument);
 
 public:
-	Nome(){}; // default
+	Nome() {}; // default
 
 	Nome(string);
 
-	void setNome(string);
+	void setNome(string) throw(invalid_argument);
 
 	string getNome() const
 	{
@@ -47,9 +47,9 @@ private:
 	bool validar(string); //throw(invalid_argument);
 
 public:
-	Cidade(){}; // default
+	Cidade() {}; // default
 	Cidade(string);
-	void setCidade(string);
+	void setCidade(string) throw(invalid_argument);;
 	string getCidade() const
 	{
 		return cidade;
@@ -69,9 +69,9 @@ private:
 	bool validar(string); //throw(invalid_argument);
 
 public:
-	Codigo(){}; // default
+	Codigo() {}; // default
 	Codigo(string);
-	void setCodigo(string);
+	void setCodigo(string) throw(invalid_argument);;
 	string getCodigo() const
 	{
 		return codigo;
@@ -91,11 +91,11 @@ private:
 	bool validar(string); // throw(invalid_argument);
 
 public:
-	Data(){}; // default
+	Data() {}; // default
 
 	Data(string);
 
-	void setData(string);
+	void setData(string) throw(invalid_argument);;
 
 	string getData() const
 	{
@@ -116,9 +116,9 @@ private:
 	bool validar(string); // throw(invalid_argument);
 
 public:
-	Descricao(){}; // default
+	Descricao() {}; // default
 	Descricao(string);
-	void setDescricao(string);
+	void setDescricao(string) throw(invalid_argument);;
 	string getDescricao() const
 	{
 		return descricao;
@@ -140,11 +140,11 @@ private:
 	bool validar(string); // throw(invalid_argument);
 
 public:
-	Email(){}; // default
+	Email() {}; // default
 
 	Email(string);
 
-	void setEmail(string);
+	void setEmail(string) throw(invalid_argument);;
 
 	string getEmail() const
 	{
@@ -163,8 +163,8 @@ private:
 	bool validar(string); // throw(invalid_argument);
 
 public:
-	Idioma(){}; // default
-	Idioma(string);
+	Idioma() {}; // default
+	Idioma(string) throw(invalid_argument);;
 	void setIdioma(string);
 	string getIdioma() const
 	{
@@ -181,14 +181,14 @@ private:
 	// Funcao validar que valida um inteiro
 	// @throw invalid_argument
 	// @return void
-	bool validar(float); // throw(invalid_argument);
+	bool validar(float);
 
 public:
-	Nota(){}; // default
+	Nota() {}; // default
 
 	Nota(float);
 
-	void setNota(float);
+	void setNota(float) throw(invalid_argument);
 
 	float getNota() const
 	{
@@ -207,9 +207,9 @@ private:
 	bool validar(string); // throw(invalid_argument);
 
 public:
-	Pais(){}; // default
+	Pais() {}; // default
 	Pais(string);
-	void setPais(string);
+	void setPais(string) throw(invalid_argument);;
 	string getPais() const
 	{
 		return pais;
@@ -229,11 +229,11 @@ private:
 	bool validar(string); // throw(invalid_argument);
 
 public:
-	Senha(){}; // default
+	Senha() {}; // default
 
 	Senha(string);
 
-	void setSenha(string);
+	void setSenha(string) throw(invalid_argument);;
 
 	string getSenha() const
 	{
