@@ -28,7 +28,7 @@ public:
 
 	Nome(string);
 
-	void setNome(string) throw(invalid_argument);
+	void setNome(string);
 
 	string getNome() const
 	{
@@ -49,7 +49,7 @@ private:
 public:
 	Cidade() {}; // default
 	Cidade(string);
-	void setCidade(string) throw(invalid_argument);;
+	void setCidade(string);
 	string getCidade() const
 	{
 		return cidade;
@@ -71,7 +71,7 @@ private:
 public:
 	Codigo() {}; // default
 	Codigo(string);
-	void setCodigo(string) throw(invalid_argument);;
+	void setCodigo(string);
 	string getCodigo() const
 	{
 		return codigo;
@@ -95,7 +95,7 @@ public:
 
 	Data(string);
 
-	void setData(string) throw(invalid_argument);;
+	void setData(string);
 
 	string getData() const
 	{
@@ -118,7 +118,7 @@ private:
 public:
 	Descricao() {}; // default
 	Descricao(string);
-	void setDescricao(string) throw(invalid_argument);;
+	void setDescricao(string);
 	string getDescricao() const
 	{
 		return descricao;
@@ -144,7 +144,7 @@ public:
 
 	Email(string);
 
-	void setEmail(string) throw(invalid_argument);;
+	void setEmail(string);
 
 	string getEmail() const
 	{
@@ -164,7 +164,7 @@ private:
 
 public:
 	Idioma() {}; // default
-	Idioma(string) throw(invalid_argument);;
+	Idioma(string);
 	void setIdioma(string);
 	string getIdioma() const
 	{
@@ -188,7 +188,7 @@ public:
 
 	Nota(float);
 
-	void setNota(float) throw(invalid_argument);
+	void setNota(float);
 
 	float getNota() const
 	{
@@ -209,7 +209,7 @@ private:
 public:
 	Pais() {}; // default
 	Pais(string);
-	void setPais(string) throw(invalid_argument);;
+	void setPais(string);
 	string getPais() const
 	{
 		return pais;
@@ -233,7 +233,8 @@ public:
 
 	Senha(string);
 
-	void setSenha(string) throw(invalid_argument);;
+
+	void setSenha(string);
 
 	string getSenha() const
 	{

@@ -2,22 +2,22 @@
 1656558028 source:c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\entidades.cpp
 	"entidades.h"
 
-1658257114 c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\entidades.h
+1658259281 c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\entidades.h
 	<iostream>
 	<iomanip>
 	<math.h>
 	<string>
-	"Dominios.h"
+	"dominios.h"
 
-1658257106 c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\dominios.h
+1658260366 c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\dominios.h
 	<stdexcept>
 	<iostream>
 	<string>
 
-1658199200 source:c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\testes.cpp
+1658257080 source:c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\testes.cpp
 	"testes.h"
 
-1658199200 c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\testes.h
+1658259288 c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\testes.h
 	"dominios.h"
 	"entidades.h"
 
@@ -27,7 +27,7 @@
 	<regex>
 	<algorithm>
 
-1658199200 source:c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\main.cpp
+1658259300 source:c:\users\livia fbpc2\documents\unb\tp1\trabalho1\tp_host_ss\desenv_trab_1\main.cpp
 	<iostream>
 	"dominios.h"
 	"entidades.h"

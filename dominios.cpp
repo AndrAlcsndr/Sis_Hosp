@@ -1,5 +1,6 @@
-#include "Dominios.h"
+#include "dominios.h"
 #include <vector>
+#include <bits/stdc++.h>
 #include <iostream>
 #include <cctype>
 #include <regex>
@@ -43,8 +44,8 @@ void Nome::setNome(string nome)
     }
     else
     {
-        string msg = "Invalid_Name";
-        throw(invalid_argument (msg));
+        //string msg = "Invalid_Name";
+        throw invalid_argument("Invalid_Name");
     }
 }
 
@@ -138,7 +139,7 @@ bool Data::validar(string data)
 {
     string carac_delim = "/";
     vector<string> words{};
-    const char* meses[] = { "JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL",
+    vector<string> meses = { "JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL",
                            "AGO", "SET", "OUT", "NOV", "DEZ" };
 
     size_t pos = 0;
@@ -150,7 +151,7 @@ bool Data::validar(string data)
     /* for (const auto &str : words) {
         cout << str << endl;
     } */
-    int tam = size(meses);
+    int tam = meses.size();
     for (int i = 0; i < tam; i++)
     {
         if (data == meses[i])

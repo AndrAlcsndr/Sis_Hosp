@@ -3,9 +3,9 @@
 // Incluir cabeçalhos.
 
 #include <iostream>
-#include "Dominios.h"
-#include "Entidades.h"
-#include "Testes.h"
+#include "dominios.h"
+#include "entidades.h"
+#include "testes.h"
 
 using namespace std;
 

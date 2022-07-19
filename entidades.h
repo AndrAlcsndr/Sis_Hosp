@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <math.h>
 #include <string>
-#include "Dominios.h"
+#include "dominios.h"
 
 using namespace std;
 

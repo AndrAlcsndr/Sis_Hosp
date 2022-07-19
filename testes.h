@@ -5,8 +5,8 @@
 
 // Incluir cabeçalhos.
 
-#include "Dominios.h"
-#include "Entidades.h"
+#include "dominios.h"
+#include "entidades.h"
 
 using namespace std;
 
